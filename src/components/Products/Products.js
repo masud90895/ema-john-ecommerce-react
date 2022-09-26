@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getStoredCard } from '../../utilities/fakedb';
 import Product from '../Product/Product';
 
-const Products = ({setProductItem}) => {
+const Products = ({setProductItem,productItem}) => {
     const [products,setProduct] = useState([])
     useEffect(()=>{
         fetch('products.json')
@@ -27,7 +27,7 @@ const Products = ({setProductItem}) => {
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5 lg:px-20 mt-10'>
             {
-                products.map(product=> <Product key={product.id} products={products} product={product} setProductItem={setProductItem}></Product>)
+                products.map(product=> <Product key={product.id} products={products} product={product} setProductItem={setProductItem} setProduct={setProduct} productItem={productItem}></Product>)
             }
         </div>
     );

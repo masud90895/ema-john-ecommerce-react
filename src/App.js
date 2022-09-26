@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Header></Header>
       <div className='flex flex-col-reverse md:flex-row'>
-        <Products setProductItem={setProductItem}></Products>
+        <Products setProductItem={setProductItem} productItem={productItem}></Products>
         <Drower productItem={productItem} setProductItem={setProductItem}></Drower>
       </div>
 
